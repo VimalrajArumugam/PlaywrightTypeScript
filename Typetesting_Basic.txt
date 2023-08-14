@@ -1,0 +1,296 @@
+What is TypeScripts?
+	* TypeScripts is an open source oriented language developed and maintaed by Microsoft.
+	* TypeScripts is a superset of javascripts that compiles to plain JavaScripts.
+	* Basically TypeScripts is the ES6 version of JavaScripts with some addition features.
+	
+Why TypeScripts?
+
+Before typeScript JavaScripts is well estalished in the market.
+Using JS we can develop both client and server side applications using different frameworks like
+	- Angular or React.js (Client side applications frameworks)
+	- Node.js (Server side applications frameworks)
+	
+JavaScripts is a dynamic programming language with no type system.
+
+We need a language with type system which increases the code quality,readability and makes it easy to maintain refactor code base.
+
+More important,error can be identified at compile time.
+
+Without the type system, it is difficult to scale javascripts to build complex applications.
+
+The reason to use TypeScripts is that it support type system and allows JavaScripts to be used at scale to build complex application.
+
+How to use use TypeScripts?
+
+A typeScript code is written in a file with .ts extension and then compiled into JavaScripts suing the typeScript compiler.
+
+tsc filename.ts
+
+Compile the typescript code into a plain javascripts file.
+
+JavaScripts files can then be included in the HTML and run on any browser.
+
+Features of Typescripts:
+
+Cross Platform - OS susch as windows and MacOS and Linux.
+
+Object oriented Languages - typeScript provides like classes, interfaces and modules.
+
+Static type checking - uses static typing and helps chekcing at compile time.
+you can find the error while writing the code without running the scripts.
+
+Optional static typing : TypeScripts also allows optional static typing in case you are using the dynamic typing of javascripts.
+
+DOM manipulation : you can use typeScript to manipulate the DOM for adding or removing elements.
+
+ES 6 Features - most features of planned ECMAscripts 2015(ES6 ,7) such as class , interface and Arrow Function etc..
+
+Advantages of TypeScripts: 
+
+TypeScripts is an open source language with continuous development and maintained by microsoft.
+
+TypeScripts runs on any browser or JavaScripts engine.
+
+All of the Typescripts code finally gets convered into JavaScripts.
+
+TypeScripts is also closer in  systex to back and languanges like java.
+
+TypeScripts has support for the latest JavaScripts features.
+
+JavaScripts : is a scripting language.
+JavaScripts code doesn't need to compile.
+There is no static typing.
+doesn't have interfaces.
+It has no optoonal parameter features.
+Modules not supported.
+number, string are the objects.
+
+TypeScripts : Object oriented programming language and superser of Javascripts.
+TypeScripts code needs to be compiled.
+There is static typing. We can declare variables with data types.
+
+
+Environment Setup:
+
+1) NodeJS
+2) Typescripts
+3) Visual Studio code
+
+C:\Users\vimalraj.arumugam>node -v
+
+Install Typescripts : 
+npm install -g typescript  --> Install Latest version
+npm install -g typescript@3.8  --> Install specific version
+
+npm uninstall -g typescript --> Uninstall typeScript
+
+Version of TypeScripts : tsc -v
+
+Install Visual Studio code
+
+Create typeScript code 
+
+Compile TypeScripts - tsc ./(Current project) filename.ts
+Exeute the JavaScripts = node ./ filename.js
+
+
+TypeScripts Variables:
+Contains which hold the data.
+JavaScripts\ is not a typed languages.we cannot specified the type of variables such as number,string and boolean.
+TypeScripts is a typed languanges
+
+Four different ways to declare the variables.
+1. Both type and initial value
+var employeeName:String = "Vimal";
+2. only type
+var employeeName:String;
+employeeName = "Raj";
+3. only the initial value
+var employeeName = "Raj";
+4. without type and initial value.
+var employeeName;
+employeeName="Arun";
+
+Var : The declare the variable using the var are available with in the function.
+If we declare them outside the function, then they are everywhere. it's global variable.
+We can update or redefine a var variable.
+
+
+let : with in the block
+The let or const variable cannot be redeclared or updated within the same scope.
+Const : We must declare a const variable with an initial value.
+The value cannot be reassigned again.
+
+Typesscripts Data Types:
+
+Build in type (Primitive data type)
+
+1) Number
+
+var first:number=12.45;
+var second:number=0o377;
+var third:number=0x435;
+var fourth:number=0b111001;
+
+console.log(first);
+console.log(second);
+console.log(third);
+console.log(fourth);
+
+2) String
+
+var empName: string="Anbhu";
+var empID: string="IT";
+
+console.log(empName);
+console.log(empID);
+
+var stmt:string=empName + "works in "+ empID;
+console.log(stmt);
+
+3) Boolean
+
+var b: boolean=true;
+console.log(b);
+
+// void type
+
+function hello():void{
+
+    console.log("This is welcome message");
+}
+
+4) Null
+
+// Null - Null represent a variables whose value is undefined
+
+var num : number|null=null;;
+num=100;
+console.log(num);
+
+5) Undefined - Undefined primitive type denote all uninitialized variables.
+
+var num1 :number|undefined=undefined;
+num1=200;
+console.log(num1);
+
+6) Any type
+
+var val:any ="Raj";
+
+val=500;
+console.log(val);
+
+val =false;
+console.log(val);
+
+7) Any Function
+
+function myFunction(x:any, y:any){
+
+    console.log(x+y);
+
+}
+
+myFunction(200,1000);
+myFunction("Hi"," Welcome");
+
+User Defined type (Non Primitive data type)
+ 
+ 
+TypeScripts Operators:
+
+4+5=9
+
+4 and 5 are called operands and + is called operator.
+
+Arithmetic :
+
+var x=10;
+var y=30;
+
+// Arithmetic Operators + - * / % ** ++ --
+
+console.log(x+y);
+console.log(x-y);
+console.log(x*y);
+console.log(x/y);
+console.log(x%y);
+console.log(x**y);
+x++; // Post Increment  11
+// ++x // Pre Increment  11
+
+Assignment :
+
+x=100;
+y=50;
+
+x+=y  // x=x+y
+
+console.log(x);
+
+console.log(x-=y);    // x=x-y;
+console.log(x*=y);    // x=x*y;
+console.log(x/=y);    // x=x/y;
+console.log(x%=y);    // x=x%y;
+
+Relational or comparision :
+
+x=10;
+y=20;
+
+console.log(x>y);  //  false
+console.log(x<y);  // true
+
+console.log(x>=y);
+console.log(x<=y);
+
+console.log(x!=y);   //true
+
+// Ternery Operators
+
+console.log(x<y?x:y);   // if x>y condition true, It will return x. the value is 10
+console.log(x>y?x:y);   // if x<y condition fa;lse, It will return y. the value is 20
+
+Logical : 
+
+// && || !
+
+var a:boolean=true;
+var b:boolean=false;
+
+console.log(a && b);   // false
+console.log(a || b);   // true
+console.log(!a);   // false
+console.log(!b);   // true
+
+STRING IN TYPESCRIPT:
+
+1) charAt() = Used for get the specified the char from the string.
+
+var myString="Welcome";
+
+var myString:string="Welcome to Typescript";
+
+// charAt() = will return the specified the character from the string
+
+console.log(myString.charAt(0));  // w
+console.log(myString.charAt(5));  //m
+
+2) concat() = Combine with 2 string.
+
+var str1:string="Welcome";
+var str2:string=" To TypeScript";
+var str3:string=" and Protractor";
+
+console.log(str1.concat(str2));  // return "Welcome To TypeScript"
+console.log(str1.concat(str2).concat(str3));  // return "Welcome To TypeScript and Protractor"
+
+3) Replace() - First charactere only replaced
+
+4) Split()
+
+5) substring()
+
+
+

@@ -1,0 +1,72 @@
+What is Cucumber?
+A cucumber is a software tool that supports behavior-driven development
+Cucumber use Gherkin language as a parser
+It supports various languages like Java, JavaScript, Ruby & Python
+Cucumber is free to use
+
+What is BDD?
+BDD includes test case development based on the behavior of software functionalities
+BDD is written in simple English language statements, not in a typical programming language
+BDD improves communication between technical and non-technical teams and stakeholders
+
+What is Gherkin?
+Gherkin is a language that developers use to define tests in Cucumber. Since this language uses plain English, 
+it’s meant to describe use cases for a software system in a way that can be read and understood by almost anyone
+
+Gherkin Syntex: 
+ 
+* Features  - Features file start with the keyword Feature.under the feature, you can mention the feature name which is to be tested.
+* Background
+* Scenario  -  Each Scenario starts with a keyword Scenario There can be one or more Scenario in a feature file.
+* Scenario outline with examples
+* Given - It is used to define the pre condition in our test. 
+* When - It is used to define a action.
+* Then  - It is used to define the final outcome or formal validation.
+* And - It is used to connect two statement and provides the logical AND condition between any two statement.
+* But - It defines the negative assersion.
+
+Installation for Playwright :
+
+Extension :
+
+Install : Playwright
+
+and CTRL + SHIFT + P
+type Playwright  - To check browser installed.
+
+Command Line :  npm playwright@latest
+
+Installation for Cucumber:
+
+Extension : Install cucumber
+
+Install Dependency : npm i @cucumber/cucumber -D
+npm i ts-node -D
+
+
+Create src folder and test inside the folder , we need to create feature and steps folder.
+
+Feature folder - need to create all the feature files.
+Steps folder - Need to create all the step files.
+create cucumber.json file - to need to update all the cucumber related files.
+
+goto package.json file - Need to update the inside the script - test : cucumber.js test
+
+CTRL , - Going to Commonly used setting in vscode. - search for cucumber
+
+cucumber feature : "src/test/feature/*.feature"
+
+inside the cucumber glue : ["src/test/steps/*.ts"]
+
+cucumber.json file
+{
+"default": {
+"Format Options": "async-await"
+},
+"Paths": ["src/test/feature"],
+"Publichquite": "true",
+"dryRun":true	
+"require":["src/test/steps/*.ts"],
+"requireMode": "ts-node/register"
+}
+}

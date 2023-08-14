@@ -1,0 +1,81 @@
+TypeScripts : Object orianted programmming language.
+read,understand and debug easy
+
+Static method support
+Type checking will do on the compile time.
+Class and interface , Statical types
+
+typescript compiled to javascripts by using typescript compiler tool.
+
+
+Node Installation 
+
+
+1) type safety
+2) Class , Interfaces, Inheritance and Modules support
+3) Static type - Checking
+4) ES6 Features support
+5) Typescripts is mainly used in Large scale applications and enterprised level applications (multiple user's, lot of lines of codes more no of modules).
+
+
+Envirnamnet Setup:
+
+NodeJS.org
+latest version
+Visual studio
+comment propt
+got to folder cd ts
+node -version
+typesctipr install from node packge modules
+npm -v
+npm install-g typescript
+tsc -v
+Compile : tsc filename (New JS file will created while compile the ts file)
+Run : node file
+
+npm install -g lite-server(To run the script in browser)
+
+lite-server .
+
+Auto compilation : tsc filename -w 
+
+TypeScripts:
+
+TypeScript is a superset of JavaScript.
+JavScript code is also valid TypeScript code.
+We can't run browser directly.
+Compiler : Compile the scripts and show the error.
+Interpreter : Compile the script line by line.If u get 2 line error. remaining error not showed.
+Why typescript? Strongly typed languange . dstictly follow the data type.
+Same javascripts code adding some features is called superset.
+We can able to get error while the compile time.  
+
+
+
+Variable declared by let are only available inside the block where they're defined.
+Variables declared by var are available throughout the function in which they're declared.
+
+function nestedScopeset(){
+ if(true){
+ //Outer
+ var functionVar=1;
+ let blockVar=2;
+ console.log(functionVar);
+ console.log(blockVar);
+ }
+ if(true){
+  console.log(functionVar);
+ console.log(blockVar);
+ }
+}
+
+
+2) Operator: 
+let x // Declare a variable
+Assignement operator (=)
+Equality Operator(==)
+Strict Equality Operator (===)
+
+3) Undefined and Null in Javascripts:
+
+4) Templete Literals / Templete String / back-Ticks

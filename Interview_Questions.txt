@@ -1,0 +1,125 @@
+1) Why Playwright?
+
+	1) Playwright is fast.
+	2) It has its own test runner and buildin report.
+	3) It support cross browser and cross domain testing.
+	4) It support multiple Language binding.
+	5) It has a huge variety of locator finding strategies.
+	6) It support both web and API automation.
+	7) It has features like codegen,storage state,trace.
+	8) It can mock API response.
+	9) Video generation of test.
+	10) Inbuild wait mechanisam.
+	
+2) How do you run failed test cases?
+
+By using Retries to pass this commend line = npx playwright test --retries=3;
+or update the properties files = retries=2  (no of attempt you want to try)
+
+3) How do you handle two windows or tab?
+
+const [popup] = await promise.all([
+page.waitForEvent("popup"),
+page.locator("login").click(),
+]);
+
+4) How to generate the report ?
+
+we can able to generate the report from properties.config file or commend line as well.
+
+reporter: [
+["dot"],
+["json",{outputfile: "test-result.json"}],
+["html",{open: "always"}]
+
+],
+
+5) What is the different between npm and npx?
+
+NPM - is a package manager used to install , delete and update Javascript package on your mechine.
+NPX - is a package executer, and it is used to execute javascript package directly without installing them.
+
+6) What is Playwright fixture?
+
+In simple playwright fixture is like hooks.
+
+test("My awesom test",async ({page})=> {
+
+})
+
+7) How to open browser?
+
+import {test} from "@playwright/test"
+test("My awesom test",async ({page})=> {
+	await page.goto("www.gogle.com");
+})
+
+or
+test("My awesom test",async ({page})=> {
+const browswer = await chromium.launch();
+const context = await browser.newContext();
+const page = await context.newPage();
+await page.goto("www.gogle.com");
+})
+
+8) How do you perform cross browser testing?
+
+Playwright basically support cross browser testing.
+
+projects: [
+    {
+      name: 'chromium',
+      use: { ...devices['Desktop Chrome'] },
+    },
+
+    // {
+    //   name: 'firefox',
+    //   use: { ...devices['Desktop Firefox'] },
+    // },
+
+    // {
+    //   name: 'webkit',
+    //   use: { ...devices['Desktop Safari'] },
+    // },
+
+
+9) How to execute in a local browser?
+
+use: {
+	chennal : "chrome",
+}
+
+10) How to run only specific tests from a test suite?
+
+test.describe("Group 2", ()=>{
+
+    test("Test3", async ({page}) => {
+
+        console.log("This is test 3 ....")
+        
+    })
+    test("Test4", async ({page}) => {
+    
+        console.log("This is test 4 ....")
+        
+    })
+
+})
+
+npx playwright test -g "test name"
+
+11) How to generate authentication cookies?
+npx playwright codegen --save-storage=auth.json
+
+12) How to skip a test based on the browswer?
+
+test.describe("My Skip test", async({Page, browserName})=>{
+	if(browserName==="firefox"){
+	test.skip();
+	}
+
+})
+
+13) How to find Xpath or Css?
+
+by using page.locator("Xpath || CSS");

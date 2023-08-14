@@ -1,0 +1,3 @@
+Behavior-driven development (BDD ) is a software development approach
+
+Behavior Driven Development (BDD) Framework enables software testers to complete test scripting in plain English.

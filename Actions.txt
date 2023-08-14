@@ -1,0 +1,107 @@
+Actions : 
+
+Playwright can interact with HTML Input elements such as text inputs, checkboxes, radio buttons, select options, mouse clicks, type characters, 
+keys and shortcuts as well as upload files and focus elements.
+
+Text input : Using locator.fill() is the easiest way to fill out the form fields.
+
+// Text input
+await page.getByRole('textbox').fill('Peter');
+
+// Date input
+await page.getByLabel('Birth date').fill('2020-02-02');
+
+// Time input
+await page.getByLabel('Appointment time').fill('13:15');
+
+// Local datetime input
+await page.getByLabel('Local time').fill('2020-03-02T05:15');
+
+Checkboxes and radio buttons:
+
+Using locator.setChecked() is the easiest way to check and uncheck a checkbox or a radio button.
+
+// Check the checkbox
+await page.getByLabel('I agree to the terms above').check();
+
+// Assert the checked state
+expect(await page.getByLabel('Subscribe to newsletter').isChecked()).toBeTruthy();
+
+// Select the radio button
+await page.getByLabel('XL').check();
+
+Select options :  Selects one or multiple options in the <select> element with locator.selectOption(). 
+
+// Single selection matching the value
+await page.getByLabel('Choose a color').selectOption('blue');
+
+// Single selection matching the label
+await page.getByLabel('Choose a color').selectOption({ label: 'Blue' });
+
+// Multiple selected items
+await page.getByLabel('Choose multiple colors').selectOption(['red', 'green', 'blue']);
+
+Mouse click : Performs a simple human click.
+
+// Generic click
+await page.getByRole('button').click();
+
+// Double click
+await page.getByText('Item').dblclick();
+
+// Right click
+await page.getByText('Item').click({ button: 'right' });
+
+// Shift + click
+await page.getByText('Item').click({ modifiers: ['Shift'] });
+
+// Hover over element
+await page.getByText('Item').hover();
+
+// Click the top left corner
+await page.getByText('Item').click({ position: { x: 0, y: 0 } });
+
+Type characters : Type into the field character by character, as if it was a user with a real keyboard with locator.type().
+
+// Type character by character
+await page.locator('#area').type('Hello World!');
+
+Keys and shortcuts:
+
+// Hit Enter
+await page.getByText('Submit').press('Enter');
+
+// Dispatch Control+Right
+await page.getByRole('textbox').press('Control+ArrowRight');
+
+// Press $ sign on keyboard
+await page.getByRole('textbox').press('$');
+
+Backquote, Minus, Equal, Backslash, Backspace, Tab, Delete, Escape,
+ArrowDown, End, Enter, Home, Insert, PageDown, PageUp, ArrowRight,
+ArrowUp, F1 - F12, Digit0 - Digit9, KeyA - KeyZ, etc.
+
+// <input id=name>
+await page.locator('#name').press('Shift+A');
+
+// <input id=name>
+await page.locator('#name').press('Shift+ArrowLeft');
+
+Upload files:
+
+// Select one file
+await page.getByLabel('Upload file').setInputFiles('myfile.pdf');
+
+// Select multiple files
+await page.getByLabel('Upload files').setInputFiles(['file1.txt', 'file2.txt']);
+
+// Remove all the selected files
+await page.getByLabel('Upload file').setInputFiles([]);
+
+// Upload buffer from memory
+await page.getByLabel('Upload file').setInputFiles({
+  name: 'file.txt',
+  mimeType: 'text/plain',
+  buffer: Buffer.from('this is test')
+});
+

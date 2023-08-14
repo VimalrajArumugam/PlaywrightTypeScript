@@ -1,0 +1,130 @@
+Playwright vs Selenium: Core Differences
+
+Features       				Playwright        															Selenium
+
+Open source					Yes, Apache 2.0																Yes, Apache 2.0
+
+Browser Support				Chrome/Chromium, Firefox, and Webkit (Open-source version of Safari)		Chrome, Firefox, Edge, IE
+
+Programming language		Java, Python, C#, JavaScript/Typescript										Java, Python, C#, JavaScript, Ruby, Perl, PHP, Typescript
+
+Test runner support			Playwright comes with an in-built test runner.								Selenium doesn’t have any inbuilt test runner.Selenium supports TestNG, JUnit, NUnit, Mocha, Jest, Jasmine, 
+							Also supports third-party test runners, Mocha, Jest, Jasmine, Ava, etc.
+
+Operating system			Windows, macOS, Linux														Windows, macOS, Linux, Solaris
+
+Architecture				Follows Websocket protocol with event-driven headless architecture.			Follows JSON wire protocol/HTTP protocol. Uses the browser Specific Webdriver to communicate with browsers.
+
+Mobile Device Support		Experimental features														Supports third-party libraries like Appium
+
+Donors/Backed Company		Microsoft/Community															Community
+
+CI/CD integration support 	Yes																			Yes
+
+Community Support			Growing community															Large community support
+
+Record and Playback support	Yes, Playwright CodeGen														Yes, Selenium IDE
+
+Visual Comparison 			Yes																			No
+Testing support
+
+
+Playwright 
+
+Playwright tests are simple, they
+
+perform actions, and
+assert the state against expectations.
+
+
+async Function:
+An async function is a function that implicitly returns a promise. 
+It allows you to use the await keyword inside the function to wait for the resolution of a promise without using .then() and .catch().
+
+function delay(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function asyncFunction() {
+  console.log("Before waiting");
+  await delay(2000);
+  console.log("After waiting");
+  return "Done!";
+}
+
+asyncFunction().then(result => console.log(result));
+
+Examples : which function we have mentioned the async always return the promise.
+
+The Keyword async before a function makes the function return a promise.
+
+await Operator:
+
+The Keyword await before a function makes the function wait for a promise.
+
+The await operator can only be used inside an async function. 
+It pauses the execution of the async function until the promise is resolved or rejected. If the promise is resolved, 
+the value returned by the promise will be the result of the await expression
+
+function fetchData() {
+  return new Promise(resolve => {
+    setTimeout(() => resolve("Data fetched successfully"), 1000);
+  });
+}
+
+async function getData() {
+  console.log("Fetching data...");
+  const result = await fetchData();
+  console.log("Data received:", result);
+}
+
+getData();
+
+
+POM - Page Object Module:
+
+1) Page Object Module, also known as POM, is a design pattern in test automation that create an object repository for storing all elements.
+2) It is useful to reduce code duplication and improve testcase maintenance.
+3) In Page Object Module, Consider each web Page of an application as a class file.
+
+Thanks for sharing the input, sir. Hereafter, I will check the grammar before sending the report and follow the above guidelines.
+
+Explored Date-Picker concepts and Implemented it in script.
+
+
+Explored the promise concept and Implemented it in the script.
+Explored the calendar concept and Implemented it in the script.
+
+Explored and developed a script in typescript with the playwright and cucumber BDD by implementing the below concepts:
+Added dependencies [playWright, cucumber, and Gherkin].
+Explored the feature file for the login scenario and Implemented it in the script.
+Executed the feature file to get a step definition file.
+Working of the step definition file.
+
+
+Feature: User Authendication tests
+
+Background:
+    Given User Navigation to the application
+    And User click on the login link
+
+Scenario: Login should be success
+    And User enter the UserName as "Admin"
+    And User enter the Password as "admin123"
+    When User click on the login button
+    Then Login should be success
+
+Scenario: Login should not be success
+    And User enter the UserName as "vimal"
+    And User enter the Password as "vimal123"
+    When User click on the login button
+    But Login should fail
+
+
+
+
+
+
+
+
+

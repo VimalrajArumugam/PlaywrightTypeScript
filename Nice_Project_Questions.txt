@@ -1,0 +1,157 @@
+NPM? (Node Package Manage)
+
+npm stands for Node Package Manager. It's a library and registry for JavaScript software packages. 
+npm also has command-line tools to help you install the different packages and manage their dependencies. 
+npm is free and relied on by over 11 million developers worldwide.
+
+NPX?  (Node Package eXecute)
+
+NPX stands for Node Package eXecute. It is simply an NPM package runner. 
+It allows developers to execute any Javascript Package available on the NPM registry without even installing it. 
+NPX is installed automatically with NPM version 5.2. 0 and above.
+
+
+1) What is playwright? and why it is feature of automation?
+
+* Playwright is a Node. js library that lets you script and automates browsers using the same API, like Chrome, Firefox, and Safari. 	
+This cross-browser automation is evergreen, capable, reliable, and fast! It also lets you access the REST API of your application to help you perform API testing.
+
+*Playwright is an open-source Node.js library developed by Microsoft. 
+It is designed to automate web browsers and provides a high-level API to interact with web pages, applications, 
+and perform end-to-end testing of web applications.
+
+*Playwright enables reliable end-to-end testing for modern web apps.
+
+Any browser • Any platform • One API
+
+	1) Cross-browser
+	2) Cross-platform
+	3) Cross-language.
+	4) Test Mobile Web.
+	
+Resilient • No flaky tests
+
+	1) Auto-wait.
+	2) Web-first assertions.
+	3) Tracing.
+	
+Full isolation • Fast execution
+
+	1) Browser contexts
+	2) Log in once
+	
+Powerful Tooling
+
+	1) Codegen
+	2) Playwright inspector.
+	3) Trace Viewer. 
+
+2) Why use Playwright automation?
+
+Playwright is a solid test automation framework that allows you to perform end-to-end testing across major browsers.
+It is equipped with multiple features, such as resiliency, auto-wait, capturing test trace, and so on, supported with BrowserStack.
+
+
+2) Playwright Intruduction:
+
+- Amazing features as compare to typical automation tools like Selenium, Cypress, WebDriver IO or Puppetter.
+- Playwright developed by Microsoft, Build by Puppetter team.
+- Puppetter : Build by Google, Worked only chromium based browser.
+- Active MS github community
+
+- Cross-browser. Playwright supports all modern rendering engines including Chromium, WebKit, and Firefox.
+- Cross platform . Windows, Linux and Mac
+- Cross-language. Use the Playwright API in TypeScript, JavaScript, Python, .NET, Java.
+- Test Mobile web . andirod and chrome and safari.
+
+Auto wait - It's automatically wait for the element to be actionable.
+Web first assertions : 
+Tracing - Capture the screenshot , video and record , eleminate your flaks.
+
+No Trade off. No Limits:
+
+We can able to automate multiple tabs.
+
+Full Isolation and Fast Execution:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3) Understand playwright architecture and its benefits?
+
+Selenium : send the request in the form of HTTP request and get response. Whenever connection established between client and server,
+it will get disconnect after sending response.
+
+Communication media is json file.
+
+Playwright : Once the request send to the playwright server via websocket protocol, (Which is way faster than HTTP).
+you can send back to back request without terminating connection.
+
+Eg: Live chat app and trading bitcoin or any trading application etc.
+
+Communication media is json for both.
+
+Playwright Client   							Playwright Protocol	 (Websocket)								Playwright Server Node JS
+Code For Pyton,Java,JavaScript,Typescrit		bidirection connection established(send and response)		Chromium (chrome,edge,opera),Webkit(apple)and firebox
+
+
+Very fast and reliable.
+
+
+
+
+4) Explore the playwright project framework structure?
+
+my-playwright-project/
+├─ package.json
+├─ tsconfig.json
+├─ jest.config.js (optional)
+├─ cucumber.js (optional)
+├─ src/
+│   ├─ pages/
+│   │   ├─ LoginPage.ts
+│   │   ├─ HomePage.ts
+│   │   └─ ... (Other page objects)
+│   ├─ tests/
+│   │   ├─ login.test.ts
+│   │   ├─ homePage.test.ts
+│   │   └─ ... (Other test files)
+│   └─ steps/ (optional, if using Cucumber)
+│       ├─ loginSteps.ts
+│       └─ ... (Other step files)
+└─ test-result/ (optional, for storing test result artifacts)
+
+
+Explanation of the project structure:
+
+1) package.json: The standard Node.js package configuration file that lists your project dependencies, scripts, and other metadata.
+
+2) tsconfig.json: The TypeScript configuration file that specifies compiler options and TypeScript settings for the project.
+
+3) jest.config.js: (Optional) Configuration file for Jest if you're using Jest as your test runner.
+
+4) cucumber.js: (Optional) Configuration file for Cucumber if you're using Cucumber as your BDD framework.
+
+5) src/: This folder contains all the source code for your automation project.
+
+6) pages/: This folder contains Page Objects that represent the web pages of your application. 
+Page Objects encapsulate the interactions and elements on each page.
+
+7) tests/: This folder contains the actual test files that use Playwright to perform interactions and validations on the web application.
+
+8) steps/: (Optional) If you're using Cucumber, 
+this folder contains step definition files that define the step implementations for your Gherkin scenarios.
+
+9) test-result/: (Optional) You can create this folder to store any test result artifacts, 
+such as HTML reports or screenshots, generated during test execution.
+

@@ -1,0 +1,71 @@
+Reports:
+
+Playwright comes with few in build report for diffeerent needs and ability to provide the custom reports.
+	
+	a) Line = npx playwright test --reporter=line.
+	
+			playwright.config.ts
+				import { defineConfig } from '@playwright/test';
+
+					export default defineConfig({
+					reporter: 'line',
+				});
+	b) Multiple reporters = You can use multiple reporters at the same time. 
+	
+			playwright.config.ts
+				import { defineConfig } from '@playwright/test';
+
+					export default defineConfig({
+					reporter: [
+					['list'],
+					['json', {  outputFile: 'test-results.json' }]
+					],
+				});
+				
+	c) List reporter = List reporter is default (except on CI where the dot reporter is default). It prints a line for each test being run.
+	
+		npx playwright test --reporter=list
+		
+		playwright.config.ts
+			import { defineConfig } from '@playwright/test';
+
+			export default defineConfig({
+			reporter: 'list',
+		});
+		
+	d) Dot reporter = npx playwright test --reporter=dot = Dot reporter is very concise - it only produces a single character per successful test run.
+	
+		playwright.config.ts
+			import { defineConfig } from '@playwright/test';
+
+			export default defineConfig({
+			reporter: 'dot',
+		});
+		
+	e) HTML reporter = npx playwright test --reporter=html
+	
+		playwright.config.ts
+			import { defineConfig } from '@playwright/test';
+
+			export default defineConfig({
+			reporter: [['html', { open: 'never' }]], or reporter: [['html', { outputFolder: 'my-report' }]],
+		});
+		
+	f) JSON reporter = npx playwright test --reporter=json
+
+	
+		playwright.config.ts
+			import { defineConfig } from '@playwright/test';
+
+			export default defineConfig({
+			reporter: [['json', { outputFile: 'results.json' }]],
+			});
+			
+Third party reporter showcase
+Allure
+Monocart
+Tesults
+ReportPortal
+Currents
+Serenity/JS
+		

@@ -1,0 +1,59 @@
+Understand the difference between the different built-in locators in Playwright
+
+1) locator('selector') or locator('text=Some Text'):
+
+This locator is called "selector" locator and is the most commonly used.
+It uses a CSS selector or text content to find elements on the page.
+
+const element = await page.locator('button'); // Using CSS selector
+const elementWithText = await page.locator('text=Submit'); // Using text content
+
+2) locator('xpath=//path/to/element'):
+
+This locator is called "xpath" locator.
+It uses an XPath expression to locate elements on the page.
+XPaths are powerful and can be used when more complex element selection is required.
+
+const element = await page.locator('xpath=//button[@id="submit-button"]'); // Using XPath
+
+3) locator('input[name="username"]') or locator('label:has-text("Username") input'):
+
+These are called "attribute" and "text" locators.
+They provide alternative ways to find elements using attributes or text content.
+
+const element = await page.locator('input[name="username"]'); // Using attribute
+const elementWithText = await page.locator('label:has-text("Username") input'); // Using text content
+
+4) locator('data-testid=someTestId'):
+
+This locator is called "data-testid" locator.
+It uses the data-testid attribute, which is often used to uniquely identify elements in tests.
+
+const element = await page.locator('data-testid=submit-button'); // Using data-testid attribute
+
+5) locator('"some text"'):
+
+This locator is called "text selector" locator.
+It uses plain text content to find elements.
+Unlike the selector locator, this locator does not use CSS selectors but directly matches the full text content of an element.
+
+const elementWithText = await page.locator('"Submit"'); // Find element with exact text "Submit"
+
+
+6) locator('#someElementId'):
+
+This locator is called "id" locator.
+It uses the id attribute to find elements.
+The id attribute should be unique on the page, making it a reliable way to locate elements
+
+const element = await page.locator('#submit-button'); // Find element with id "submit-button"
+
+7) locator('css=css_selector'):
+
+This locator is called "css" locator.
+It is similar to the "selector" locator but explicitly specifies that it's using a CSS selector.
+
+const element = await page.locator('css=button'); // Using CSS selector with "css="
+
+
+

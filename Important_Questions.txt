@@ -1,0 +1,153 @@
+1) What is playwright? and why it is feature of automation?
+
+*Playwright is an open-source Node.js library developed by Microsoft. 
+It is designed to automate web browsers and provides a high-level API to interact with web pages, applications, 
+and perform end-to-end testing of web applications.
+
+*Playwright enables reliable end-to-end testing for modern web apps.
+
+Any browser • Any platform • One API
+
+	1) Cross-browser
+	2) Cross-platform
+	3) Cross-language.
+	4) Test Mobile Web.
+	
+Resilient • No flaky tests
+
+	1) Auto-wait.
+	2) Web-first assertions.
+	3) Tracing.
+	
+Full isolation • Fast execution
+
+	1) Browser contexts
+	2) Log in once
+	
+Powerful Tooling
+
+	1) Codegen
+	2) Playwright inspector.
+	3) Trace Viewer.
+	
+2) Playwright Architecture:
+
+	1) Browser: Playwright can work with different browser engines: Chromium, Firefox, and WebKit. 
+	Each browser engine is managed by its own executable and can be launched in headless or non-headless mode.
+	
+	2) Browser Context: Each browser instance creates one or more contexts, which represent isolated instances of the browser. 
+	A context contains multiple pages and their associated resources.
+	
+	3) Page: Pages represent individual web pages within a browser context. 
+	They provide methods and events to interact with the page's DOM, perform actions like clicking, typing, and waiting, 
+	and capture screenshots or videos of the page's content.
+	
+Benefits of Playwright:
+
+	1) Cross-Browser Support:
+	2) Headless and Non-Headless Modes:
+	3) Capture and Record:
+	4) Fast and Reliable:
+	5) Community and Support:
+	6) Rich Automation Capabilities:
+	7) Modern API:
+	8) Isolated Contexts
+	
+	
+3) Playwright installation and project setup?
+
+	npm init playwright@latest
+
+Run the install command and select the following to get started:
+
+	1) Choose between TypeScript or JavaScript (default is TypeScript)
+	2) Name of your Tests folder (default is tests or e2e if you already have a tests folder in your project)
+	3) Add a GitHub Actions workflow to easily run tests on CI
+	4) Install Playwright browsers (default is true)
+	
+Whats Installed :
+
+playwright.config.ts
+package.json
+package-lock.json
+tests/
+  example.spec.ts
+tests-examples/
+  demo-todo-app.spec.ts
+  
+Test : Default test will run on all 3 browser. Which will be configured in the playwright,config.file.
+
+	a) Running all the tests
+	
+		npx playwright test
+		
+	b) Run the test in UI mode
+		npx playwright test -- ui
+		
+	c) Running a single test file.
+		npx playwright test sample.spec.ts
+		
+	d) Running test with specific name
+		npx playwright test -g "name of the test"
+		
+	e) Run a set of test files
+		npx playwright test tests/todo_pages/tests/sample_pages
+		
+	f) Run files that have landing or login in the file name.
+		npx playwright test landing login
+		
+	g) Run test with title
+		npx playwright test -g "add a todo item"
+		
+	h) Running the test in headed mode
+		npx playwright test sample.spec.ts -- headed
+		
+	i) Running tests on a specific project
+		npx playwright test sample.spec.ts --project=chromium
+		
+	j) To record and generate the code.
+	
+		npx playwright codegen
+  
+4) Framework Structure - Playwright and typescripts:
+
+my-playwright-project/
+├─ package.json
+├─ tsconfig.json
+├─ jest.config.js (optional)
+├─ cucumber.js (optional)
+├─ src/
+│   ├─ pages/
+│   │   ├─ LoginPage.ts
+│   │   ├─ HomePage.ts
+│   │   └─ ... (Other page objects)
+│   ├─ tests/
+│   │   ├─ login.test.ts
+│   │   ├─ homePage.test.ts
+│   │   └─ ... (Other test files)
+│   └─ steps/ (optional, if using Cucumber)
+│       ├─ loginSteps.ts
+│       └─ ... (Other step files)
+└─ test-result/ (optional, for storing test result artifacts)
+
+1) Project Build Management Tool :
+2) Unit Test Framework :
+3) Design Pattern : 
+4) Report : HTML report and 3rd party report allure report.
+5) Logger :
+6) Test Data = JSON format
+
+
+TypeScript:
+
+TypeScript is a powerful superset of JavaScript that adds optional static typing, making it easier to catch errors before runtime. 
+By combining these two tools, we can create more reliable and maintainable tests.
+
+
+
+
+
+Cucumber:
+
+Cucumber is a popular behavior-driven development (BDD) tool that allows developers 
+and stakeholders to collaborate on defining and testing application requirements in a human-readable format.
